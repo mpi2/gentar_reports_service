@@ -35,9 +35,9 @@ public class Reporter implements CommandLineRunner {
     public void run(String... args) throws Exception {
         System.out.println("running Reporter application now!!!");
 
-        ProjectClient projClient=new ProjectClient();
+
         try {
-            projClient.getProjects();
+            ProjectClient projClient=new ProjectClient();
         }
         catch (Exception e){
             e.printStackTrace();
