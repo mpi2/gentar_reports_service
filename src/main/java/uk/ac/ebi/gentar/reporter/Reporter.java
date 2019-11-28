@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.cache.annotation.EnableCaching;
 import uk.ac.ebi.gentar.reporter.clients.ProjectClient;
+import uk.ac.ebi.gentar.reporter.clients.SignInClient;
 
 import java.util.Arrays;
 
@@ -34,10 +35,17 @@ public class Reporter implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         System.out.println("running Reporter application now!!!");
-
+        if(args.length<2){
+            System.err.println("Error: we need a username and password to proceed");
+        }
+        String userName=args[0];
+        String password=args[1];
 
         try {
+            SignInClient signIn=new SignInClient();
+            String token=signIn.getAuthorizationToken(userName, password);
             ProjectClient projClient=new ProjectClient();
+            projClient.getProjects(token);
         }
         catch (Exception e){
             e.printStackTrace();
