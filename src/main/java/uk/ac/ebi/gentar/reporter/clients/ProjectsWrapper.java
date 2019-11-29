@@ -1,8 +1,7 @@
 package uk.ac.ebi.gentar.reporter.clients;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-//import org.springframework.data.annotation.Id;
-import uk.ac.ebi.impc_prod_tracker.web.dto.project.ProjectDTO;
+import org.gentar.biology.project.ProjectDTO;
 
 import javax.annotation.Resource;
 import java.util.List;

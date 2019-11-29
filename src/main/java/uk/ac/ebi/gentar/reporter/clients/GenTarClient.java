@@ -1,10 +1,10 @@
 package uk.ac.ebi.gentar.reporter.clients;
+import org.gentar.biology.plan.PlanDTO;
 import org.springframework.hateoas.PagedModel;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.*;
 import org.springframework.web.client.RestTemplate;
-import uk.ac.ebi.impc_prod_tracker.web.dto.plan.PlanDTO;
-import uk.ac.ebi.impc_prod_tracker.web.dto.project.ProjectDTO;
+import org.gentar.biology.project.ProjectDTO;
 
 import java.net.URISyntaxException;
 import java.util.*;

@@ -1,5 +1,7 @@
 package uk.ac.ebi.gentar.reporter;
 
+import org.gentar.biology.plan.PlanDTO;
+import org.gentar.biology.project.ProjectDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.*;
@@ -9,8 +11,6 @@ import org.springframework.hateoas.PagedModel;
 import org.springframework.http.ResponseEntity;
 import uk.ac.ebi.gentar.reporter.clients.GenTarClient;
 import uk.ac.ebi.gentar.reporter.clients.SignInClient;
-import uk.ac.ebi.impc_prod_tracker.web.dto.plan.PlanDTO;
-import uk.ac.ebi.impc_prod_tracker.web.dto.project.ProjectDTO;
 
 import java.net.URISyntaxException;
 import java.util.Collection;
