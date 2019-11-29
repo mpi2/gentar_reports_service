@@ -58,7 +58,7 @@ public class Reporter implements CommandLineRunner {
 
     private void getAllProjects(String token) throws URISyntaxException {
         //token valid for 1 hour so can use it till then.
-        ResponseEntity<PagedModel<ProjectDTO>> response = genTarClient.getProjects(token, 0, 10);
+        ResponseEntity<PagedModel<ProjectDTO>> response = genTarClient.getProjects(token, 0, 1000000);
         System.out.println("projects response="+ response);
         PagedModel pageModel= response.getBody();
         System.out.println("number of projects available="+ pageModel.getMetadata().getTotalElements());
@@ -69,7 +69,7 @@ public class Reporter implements CommandLineRunner {
 
     private void getAllPlans(String token) throws URISyntaxException {
         //token valid for 1 hour so can use it till then.
-        ResponseEntity<PagedModel<PlanDTO>> response = genTarClient.getPlans(token, 0, 10);
+        ResponseEntity<PagedModel<PlanDTO>> response = genTarClient.getPlans(token, 0, 10000);
         System.out.println("plans response="+ response);
         PagedModel pageModel= response.getBody();
         System.out.println("number of plans available="+ pageModel.getMetadata().getTotalElements());
