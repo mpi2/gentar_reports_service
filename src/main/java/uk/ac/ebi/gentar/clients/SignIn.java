@@ -1,6 +1,4 @@
-package uk.ac.ebi.gentar.reporter.clients;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
+package uk.ac.ebi.gentar.clients;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 

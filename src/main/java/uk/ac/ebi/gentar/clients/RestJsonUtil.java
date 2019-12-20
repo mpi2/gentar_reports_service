@@ -1,4 +1,4 @@
-package uk.ac.ebi.gentar.reporter.clients;
+package uk.ac.ebi.gentar.clients;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -26,7 +26,7 @@ public class RestJsonUtil {
         converter.setSupportedMediaTypes(MediaType.parseMediaTypes("application/json"));
         converter.setObjectMapper(mapper);
         RestTemplateBuilder restTemplateBuilder=new RestTemplateBuilder();
-        restTemplate = restTemplateBuilder.additionalMessageConverters(Arrays.asList(converter)).build();
+        restTemplate = restTemplateBuilder.additionalMessageConverters(Arrays.asList(converter)).errorHandler(new GentarRestErrorHandler()).build();
 
         return restTemplate;
     }
@@ -35,7 +35,9 @@ public class RestJsonUtil {
         HttpHeaders headers;
         headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
-        headers.set("Authorization", "Bearer "+accessToken);
+        if(accessToken!=null){
+            headers.set("Authorization", "Bearer "+accessToken);
+        }
         return headers;
     }
 }

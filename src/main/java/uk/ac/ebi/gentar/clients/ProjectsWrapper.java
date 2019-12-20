@@ -1,4 +1,4 @@
-package uk.ac.ebi.gentar.reporter.clients;
+package uk.ac.ebi.gentar.clients;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.gentar.biology.project.ProjectDTO;
